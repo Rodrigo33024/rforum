@@ -1,0 +1,19 @@
+<div class="col-md-10 col-md-offset-1">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2><%= @message.title %></h2>
+    </div>
+    <p class="panel-body">
+      <%= @message.description %>
+    </p>
+    <div class="panel-footer">
+      <p>
+        <%= time_ago_in_words(@message.created_at) %> ago
+      </p>
+      <div class="btn-group">
+        <%= link_to 'List', root_path, class: 'btn btn-default' %>
+
+      </div>
+    </div>
+  </div>
+</div>

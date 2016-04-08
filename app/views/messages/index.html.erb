@@ -1,1 +1,17 @@
-index page
+<% @messages.each do |message| %>
+  <div class="col-md-10 col-md-offset-1">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2><%= message.title %></h2>
+      </div>
+      <p class="panel-body">
+        <%= message.description %>
+      </p>
+      <div class="panel-footer">
+        <%= link_to 'View Post', message, class: 'btn btn-default' %>
+      </div>
+    </div>
+
+    <%= link_to 'Post New Message', new_message_path %>
+  </div>
+<% end %>
