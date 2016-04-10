@@ -12,7 +12,8 @@
       </p>
       <div class="btn-group">
         <%= link_to 'List', root_path, class: 'btn btn-default' %>
-
+        <%= link_to 'Edit', edit_message_path(@message), class: 'btn btn-primary' %>
+        <%= link_to 'Delete', messages_path(@message), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
       </div>
     </div>
   </div>
