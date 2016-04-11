@@ -3,9 +3,16 @@
     <div class="panel-heading">
       <h2><%= @message.title %></h2>
     </div>
-    <p class="panel-body">
-      <%= @message.description %>
-    </p>
+    <div class="panel-body">
+      <p><%= @message.description %></p>
+
+      <h3>Comments:</h3>
+      <p><%= render @message.comments %></p>
+
+      <h4>Reply</h4>
+      <%= render 'comments/form' %>
+
+    </div>
     <div class="panel-footer">
       <p>
         <%= time_ago_in_words(@message.created_at) %> ago
