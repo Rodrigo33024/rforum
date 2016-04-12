@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
-  before_action :find_message, only: [:create, :edit, :update, :destroy]
-  before_action :find_comment, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :find_message, only: [:create, :show, :edit, :update, :destroy]
+  before_action :find_comment, only: [:edit, :show, :update, :destroy]
   def create
     @message = Message.find(params[:message_id])
     @comment = @message.comments.create(comment_params)
@@ -11,6 +12,9 @@ class CommentsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def show
   end
 
   def edit
